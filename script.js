@@ -242,7 +242,7 @@ function fetchAllProfilePosts() {
 			$('.uiMorePagerPrimary').trigger('click');
 			updateCurrentFBWallContents();
 		}
-	}, 1000); // Poll for changes every second.	
+	}, 0); // Poll for changes continously.	
 }
  
 function userIsOnProfilePage() {
