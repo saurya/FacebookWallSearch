@@ -1,0 +1,28 @@
+{
+	"name": "Facebook Wall Post Search",
+	"version": "1.0",
+	"description": "Facebook's search API only allows you to search for posts on your wall up to thirty days in the 	past. This extension, when launched on your profile page, will build a dataset of all posts since you joined 	Facebook. Once this dataset has been created, it will be saved to your computer and updated only as necessary. 	From it, you will be able to search for posts from the distant past.",
+	"icons":{
+		"128":"facebooksearch.png"
+	},
+	
+	"browser_action":	{
+		"default_icon": "facebooksearch.png",
+		"popup": "wallpostsearch.html"
+	},
+	
+	"content_scripts": [
+    {
+      "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+      "js" : ["jquery.min.js", "script.js"],
+      "run_at" : "document_end"
+    }
+  	],
+  	
+  	"permissions": [
+  		"http://graph.facebook.com/*",
+  		"tabs",
+ 	    "unlimitedStorage"
+	]
+
+}
